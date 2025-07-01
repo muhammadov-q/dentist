@@ -158,7 +158,7 @@ export default function Contact({
           className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl h-12 border-0 active:scale-95 transition-transform"
         >
           <Phone className="w-4 h-4 mr-2" />
-          +998 90 123 45 67
+          +998 91 647 27 77
         </Button>
         <Button
           onClick={onEmail}

@@ -56,11 +56,11 @@ export default function DentistWebsite() {
 
   // Contact handlers
   const handleCall = () => {
-    window.location.href = "tel:+998901234567"
+    window.location.href = "tel:+998916472777"
   }
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/998901234567", "_blank")
+    window.open("https://wa.me/998916472777", "_blank")
   }
 
   const handleEmail = () => {

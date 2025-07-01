@@ -238,7 +238,7 @@ export default function Home({ stories, beforeAfterImages, achievements, onStory
                 className="w-full border border-white/50 text-white hover:bg-white/10 rounded-xl bg-transparent active:scale-95 transition-transform"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                +998 90 123 45 67
+                +998 91 647 27 77
               </Button>
             </div>
           </CardContent>
