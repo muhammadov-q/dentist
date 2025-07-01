@@ -4,13 +4,13 @@ export const stories: Story[] = [
   {
     id: 1,
     username: "Implant",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/implant_profile.jpg",
     gradient: "from-blue-400 to-cyan-400",
     viewed: false,
     content: [
       {
         type: "image",
-        url: "/placeholder.svg?height=600&width=400",
+        url: "/coming_soon.jpg",
         text: "Implant qo'yish jarayoni",
         duration: 5000,
       },
@@ -19,13 +19,13 @@ export const stories: Story[] = [
   {
     id: 2,
     username: "Tozalash",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/tozalsh_profile.jpg",
     gradient: "from-cyan-400 to-teal-400",
     viewed: false,
     content: [
       {
         type: "image",
-        url: "/placeholder.svg?height=600&width=400",
+        url: "/coming_soon.jpg",
         text: "Professional tish tozalash",
         duration: 5000,
       },
@@ -34,13 +34,13 @@ export const stories: Story[] = [
   {
     id: 3,
     username: "Chegirmalar",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/discount.jpg",
     gradient: "from-teal-400 to-blue-400",
     viewed: true,
     content: [
       {
         type: "image",
-        url: "/placeholder.svg?height=600&width=400",
+        url: "/coming_soon.jpg",
         text: "50% chegirma barcha xizmatlarga!",
         duration: 5000,
       },
@@ -49,13 +49,13 @@ export const stories: Story[] = [
   {
     id: 4,
     username: "Oqartirish",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/oqartirish.jpg",
     gradient: "from-indigo-400 to-blue-400",
     viewed: false,
     content: [
       {
         type: "image",
-        url: "/placeholder.svg?height=600&width=400",
+        url: "/coming_soon.jpg",
         text: "Tishlarni oqartirish natijasi",
         duration: 5000,
       },
@@ -64,13 +64,13 @@ export const stories: Story[] = [
   {
     id: 5,
     username: "Bolalar",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/bolalar.jpg",
     gradient: "from-emerald-400 to-teal-400",
     viewed: false,
     content: [
       {
         type: "image",
-        url: "/placeholder.svg?height=600&width=400",
+        url: "/coming_soon.jpg",
         text: "Bolalar uchun maxsus parvarish",
         duration: 5000,
       },
@@ -89,7 +89,7 @@ export const services: Service[] = [
     description:
       "To'liq tish parvarishi, tozalash, plomba qo'yish va profilaktik davolash. Muntazam tekshiruvlar orqali tish kasalliklarining oldini olish.",
     includes: ["Tish tekshiruvi", "Professional tozalash", "Plomba qo'yish", "Maslahat berish"],
-    gradient: "from-blue-400 to-cyan-400",
+    gradient: "from-gray-700 to-gray-900",
   },
   {
     id: 2,
@@ -101,7 +101,7 @@ export const services: Service[] = [
     description:
       "Tishlarni oqartirish, viner qo'yish va tabassum makeover xizmatlari. Tabassumingizni yanada chiroyli qilish uchun zamonaviy usullar.",
     includes: ["Tishlarni oqartirish", "Viner qo'yish", "Tabassum dizayni", "Rang tanlash"],
-    gradient: "from-cyan-400 to-teal-400",
+    gradient: "from-gray-700 to-gray-900",
   },
   {
     id: 3,
@@ -113,7 +113,7 @@ export const services: Service[] = [
     description:
       "Tish chiqarish, aql tishlari olib tashlash va kichik jarrohlik amaliyotlari. Og'riqsiz va xavfsiz jarrohlik.",
     includes: ["Tish chiqarish", "Aql tishlari", "Kichik jarrohlik", "Og'riqsizlashtirish"],
-    gradient: "from-teal-400 to-blue-400",
+    gradient: "from-gray-700 to-gray-900",
   },
   {
     id: 4,
@@ -122,9 +122,10 @@ export const services: Service[] = [
     shortDesc: "Bolalar uchun",
     price: "120,000 so'm",
     duration: "30 daqiqa",
-    description: "Bolalar uchun maxsus tish parvarishi qulay va do'stona muhitda. Bolalarni qo'rqitmasdan davolash.",
+    description:
+      "Bolalar uchun maxsus tish parvarishi qulay va do'stona muhitda. Bolalarni qo'rqitmasdan davolash.",
     includes: ["Bolalar tekshiruvi", "Fluorlash", "Sealant qo'yish", "Og'iz gigienasi o'rgatish"],
-    gradient: "from-indigo-400 to-blue-400",
+    gradient: "from-gray-700 to-gray-900",
   },
   {
     id: 5,
@@ -136,7 +137,7 @@ export const services: Service[] = [
     description:
       "Yo'qolgan tishlarni qayta tiklash uchun zamonaviy implant texnologiyasi. Uzoq muddatli va ishonchli yechim.",
     includes: ["3D skanerlash", "Implant qo'yish", "Toj o'rnatish", "Kuzatuv"],
-    gradient: "from-blue-500 to-indigo-500",
+    gradient: "from-gray-700 to-gray-900",
   },
   {
     id: 6,
@@ -145,11 +146,13 @@ export const services: Service[] = [
     shortDesc: "Tishlarni to'g'rilash",
     price: "500,000 so'm",
     duration: "45 daqiqa",
-    description: "Breket tizimi va zamonaviy usullar bilan tishlarni to'g'rilash. Chiroyli va to'g'ri tish qatori.",
+    description:
+      "Breket tizimi va zamonaviy usullar bilan tishlarni to'g'rilash. Chiroyli va to'g'ri tish qatori.",
     includes: ["Tish tahlili", "Breket o'rnatish", "Muntazam kuzatuv", "Natija kafolati"],
-    gradient: "from-cyan-500 to-blue-500",
+    gradient: "from-gray-700 to-gray-900",
   },
 ]
+
 
 export const beforeAfterImages: BeforeAfterImage[] = [
   {

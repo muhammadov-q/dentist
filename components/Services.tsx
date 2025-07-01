@@ -2,9 +2,9 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Calendar, Phone, CheckCircle } from "lucide-react"
-import { getIcon } from "../utils/icons"
-import type { Service } from "../types"
+import { ChevronDown, Calendar, Phone, CheckCircle, Clock } from "lucide-react"
+import { getIcon } from "@/utils/icons"
+import type { Service } from "@/types"
 
 interface ServicesProps {
   services: Service[]
@@ -27,31 +27,60 @@ export default function Services({
 }: ServicesProps) {
   return (
     <>
-      <div className="px-4 space-y-4 pb-6 pt-4">
-        <div className="text-center">
-          <h2 className="text-xl font-semibold text-gray-900">Xizmatlar</h2>
-          <p className="text-sm text-gray-600 mt-1">To'liq tish parvarishi</p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3">
+      <div className="px-4 space-y-6 pb-6 pt-4">
+        {/* Services Grid */}
+        <div className="space-y-3">
           {services.map((service) => (
             <Card
               key={service.id}
-              className="border border-gray-200 rounded-2xl bg-white active:scale-95 transition-transform cursor-pointer"
+              className="border border-gray-200 rounded-2xl bg-white cursor-pointer"
               onClick={() => onServiceClick(service)}
             >
-              <CardContent className="p-4 text-center">
-                <div
-                  className={`w-12 h-12 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mx-auto mb-3`}
-                >
-                  <div className="text-white">{getIcon(service.icon, "w-8 h-8")}</div>
+              <CardContent className="p-4">
+                <div className="flex items-center gap-4">
+                  {/* Icon */}
+                  <div
+                    className={`w-12 h-12 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center flex-shrink-0`}
+                  >
+                    <div className="text-white">{getIcon(service.icon, "w-6 h-6")}</div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-gray-900 text-sm mb-1">{service.title}</h3>
+                    <p className="text-xs text-gray-500 mb-2">{service.shortDesc}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-semibold text-blue-600">{service.price}</span>
+                      <div className="flex items-center gap-1 text-xs text-gray-400">
+                        <Clock className="w-3 h-3" />
+                        <span>{service.duration}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="text-gray-400">
+                    <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
+                  </div>
                 </div>
-                <h3 className="font-medium text-gray-900 text-sm mb-1">{service.title}</h3>
-                <p className="text-xs text-gray-600 mb-2">{service.shortDesc}</p>
-                <div className="text-sm font-semibold text-blue-600">{service.price}</div>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Bottom Info */}
+        <div className="bg-blue-50 rounded-2xl p-4 border border-blue-100">
+          <div className="text-center space-y-2">
+            <p className="text-sm text-gray-600">Savollar bormi?</p>
+            <Button
+              onClick={onCall}
+              variant="outline"
+              className="border-blue-200 text-blue-600 hover:bg-blue-100 rounded-xl bg-transparent"
+            >
+              <Phone className="w-4 h-4 mr-2" />
+              Maslahat olish
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -63,7 +92,9 @@ export default function Services({
 
           {/* Drawer */}
           <div
-            className={`fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl z-50 max-w-md mx-auto transform transition-transform duration-300 ${showServiceDrawer ? "translate-y-0" : "translate-y-full"}`}
+            className={`fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl z-50 max-w-md mx-auto transform transition-transform duration-300 ${
+              showServiceDrawer ? "translate-y-0" : "translate-y-full"
+            }`}
           >
             {/* Drawer Handle */}
             <div className="flex justify-center pt-3 pb-2">
@@ -71,56 +102,71 @@ export default function Services({
             </div>
 
             {/* Drawer Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-200">
-              <h2 className="text-lg font-semibold text-gray-900">{selectedService.title}</h2>
+            <div className="flex items-center justify-between p-4 border-b border-gray-100">
+              <div className="flex items-center gap-3">
+                <div
+                  className={`w-10 h-10 bg-gradient-to-br ${selectedService.gradient} rounded-xl flex items-center justify-center`}
+                >
+                  <div className="text-white">{getIcon(selectedService.icon, "w-5 h-5")}</div>
+                </div>
+                <div>
+                  <h2 className="text-lg font-semibold text-gray-900">{selectedService.title}</h2>
+                  <p className="text-sm text-gray-500">{selectedService.shortDesc}</p>
+                </div>
+              </div>
               <button onClick={onCloseDrawer} className="p-2">
-                <ChevronDown className="w-5 h-5 text-gray-600" />
+                <ChevronDown className="w-5 h-5 text-gray-400" />
               </button>
             </div>
 
             {/* Drawer Content */}
-            <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
-              <div className="text-center">
-                <div
-                  className={`w-20 h-20 bg-gradient-to-br ${selectedService.gradient} rounded-3xl flex items-center justify-center mx-auto mb-4`}
-                >
-                  <div className="text-white">{getIcon(selectedService.icon, "w-8 h-8")}</div>
-                </div>
-                <div className="flex justify-between items-center mb-4">
-                  <div className="text-2xl font-bold text-blue-600">{selectedService.price}</div>
-                  <div className="text-sm text-gray-600">{selectedService.duration}</div>
+            <div className="p-4 space-y-6 max-h-[70vh] overflow-y-auto">
+              {/* Price and Duration */}
+              <div className="bg-gray-50 rounded-2xl p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-2xl font-semibold text-gray-900">{selectedService.price}</div>
+                    <div className="text-sm text-gray-500">Narx</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="flex items-center gap-1 text-gray-700">
+                      <Clock className="w-4 h-4" />
+                      <span className="font-medium">{selectedService.duration}</span>
+                    </div>
+                    <div className="text-sm text-gray-500">Vaqt</div>
+                  </div>
                 </div>
               </div>
 
+              {/* Description */}
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2">Tavsif</h3>
+                <h3 className="font-semibold text-gray-900 mb-3">Tavsif</h3>
                 <p className="text-gray-700 text-sm leading-relaxed">{selectedService.description}</p>
               </div>
 
+              {/* Service Includes */}
               <div>
                 <h3 className="font-semibold text-gray-900 mb-3">Xizmat tarkibi</h3>
                 <div className="space-y-2">
                   {selectedService.includes.map((item, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                       <span className="text-sm text-gray-700">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
+              {/* Action Buttons */}
               <div className="space-y-3 pt-4">
-                <Button
-                  onClick={onBooking}
-                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl h-12 border-0"
-                >
+                <Button onClick={onBooking} className="w-full bg-blue-600 text-white rounded-xl h-12 font-medium">
                   <Calendar className="w-4 h-4 mr-2" />
                   Qabulga yozilish
                 </Button>
                 <Button
                   onClick={onCall}
                   variant="outline"
-                  className="w-full border border-blue-200 text-blue-600 hover:bg-blue-50 rounded-xl h-12 bg-white"
+                  className="w-full border-gray-200 text-gray-700 hover:bg-gray-50 rounded-xl h-12 font-medium bg-transparent"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Qo'ng'iroq qilish

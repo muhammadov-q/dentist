@@ -34,13 +34,15 @@ export default function Home({ stories, beforeAfterImages, achievements, onStory
                   story.viewed ? "opacity-60" : ""
                 } active:scale-95 transition-transform`}
               >
-                <div className="w-full h-full rounded-full bg-white p-0.5">
-                  <Avatar className="w-full h-full">
-                    <AvatarImage src={story.avatar || "/placeholder.svg"} alt={story.username} />
-                    <AvatarFallback className="text-xs bg-gradient-to-br from-blue-100 to-cyan-100">
-                      {story.username.slice(0, 2).toUpperCase()}
-                    </AvatarFallback>
-                  </Avatar>
+                <div className="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-400">
+                  <div className="w-full h-full rounded-full bg-white p-0.5">
+                    <Avatar className="w-full h-full">
+                      <AvatarImage src={story.avatar || "/placeholder.svg"} alt={story.username} />
+                      <AvatarFallback className="text-xs bg-gradient-to-br from-blue-100 to-cyan-100">
+                        {story.username.slice(0, 2).toUpperCase()}
+                      </AvatarFallback>
+                    </Avatar>
+                  </div>
                 </div>
               </button>
               <span className="text-xs text-gray-600 font-medium truncate max-w-[70px]">{story.username}</span>
@@ -56,7 +58,7 @@ export default function Home({ stories, beforeAfterImages, achievements, onStory
             <div className="text-center space-y-4">
               <div className="relative inline-block">
                 <Avatar className="w-20 h-20 border-2 border-gray-200">
-                  <AvatarImage src="/placeholder.svg?height=80&width=80" alt="Dr. Kamronbek" />
+                  <AvatarImage src="/profile.PNG" alt="Dr. Kamronbek" />
                   <AvatarFallback className="text-lg bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-700">
                     DK
                   </AvatarFallback>
