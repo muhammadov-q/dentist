@@ -16,7 +16,7 @@ export default function Menu({ activeTab, setActiveTab }: MenuProps) {
   ]
 
   return (
-    <nav className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full rounded-t-xl rounded-tl-xl max-w-md bg-white border-t border-gray-200 px-4 py-3 z-50">
+    <nav className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full rounded-t-xl rounded-tl-xl max-w-md bg-white border-t border-gray-200 px-4 py-3">
       <div className="flex justify-between items-center">
         {tabs.map((tab) => {
           const Icon = tab.icon
