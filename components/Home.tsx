@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Bell, Gift, History, CreditCard, Camera, Sparkles, Calendar, Phone } from "lucide-react"
-import { getIcon } from "../utils/icons"
+import { getIcon } from "@/utils/icons"
 import type { Story as StoryType, BeforeAfterImage, Achievement } from "../types"
 
 interface HomeProps {
@@ -58,7 +58,7 @@ export default function Home({ stories, beforeAfterImages, achievements, onStory
             <div className="text-center space-y-4">
               <div className="relative inline-block">
                 <Avatar className="w-20 h-20 border-2 border-gray-200">
-                  <AvatarImage src="/profile.PNG" alt="Dr. Kamronbek" />
+                  <AvatarImage src="/profile.png" alt="Dr. Kamronbek" />
                   <AvatarFallback className="text-lg bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-700">
                     DK
                   </AvatarFallback>
@@ -75,8 +75,8 @@ export default function Home({ stories, beforeAfterImages, achievements, onStory
                 </p>
               </div>
               <div className="flex flex-wrap justify-center gap-2">
-                <Badge className="bg-blue-50 text-blue-700 border border-blue-200 font-normal">15+ yil tajriba</Badge>
-                <Badge className="bg-cyan-50 text-cyan-700 border border-cyan-200 font-normal">1000+ bemor</Badge>
+                <Badge className="bg-blue-50 text-blue-700 border border-blue-200 font-normal hover:bg-white">15+ yil tajriba</Badge>
+                <Badge className="bg-cyan-50 text-cyan-700 border border-cyan-200 font-normal hover:bg-white">1000+ bemor</Badge>
               </div>
             </div>
           </CardContent>
@@ -111,28 +111,28 @@ export default function Home({ stories, beforeAfterImages, achievements, onStory
       <div className="px-4 space-y-3">
         <h3 className="text-lg font-semibold text-gray-900">Xususiyatlar</h3>
         <div className="grid grid-cols-2 gap-3">
-          <Card className="border border-blue-200 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50">
+          <Card className="border border-blue-200 rounded-2xl bg-white">
             <CardContent className="p-4 text-center">
               <Bell className="w-6 h-6 text-blue-600 mx-auto mb-2" />
               <div className="text-sm font-medium text-gray-900">Eslatmalar</div>
               <div className="text-xs text-gray-600">Qabul vaqti</div>
             </CardContent>
           </Card>
-          <Card className="border border-cyan-200 rounded-2xl bg-gradient-to-br from-cyan-50 to-teal-50">
+          <Card className="border border-cyan-200 rounded-2xl bg-white">
             <CardContent className="p-4 text-center">
               <Gift className="w-6 h-6 text-cyan-600 mx-auto mb-2" />
               <div className="text-sm font-medium text-gray-900">Bonuslar</div>
               <div className="text-xs text-gray-600">Chegirmalar</div>
             </CardContent>
           </Card>
-          <Card className="border border-teal-200 rounded-2xl bg-gradient-to-br from-teal-50 to-blue-50">
+          <Card className="border border-teal-200 rounded-2xl bg-white">
             <CardContent className="p-4 text-center">
               <History className="w-6 h-6 text-teal-600 mx-auto mb-2" />
               <div className="text-sm font-medium text-gray-900">Tarix</div>
               <div className="text-xs text-gray-600">Qabullar</div>
             </CardContent>
           </Card>
-          <Card className="border border-indigo-200 rounded-2xl bg-gradient-to-br from-indigo-50 to-blue-50">
+          <Card className="border border-indigo-200 rounded-2xl bg-white">
             <CardContent className="p-4 text-center">
               <CreditCard className="w-6 h-6 text-indigo-600 mx-auto mb-2" />
               <div className="text-sm font-medium text-gray-900">To'lov</div>

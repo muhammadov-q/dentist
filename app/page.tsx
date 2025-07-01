@@ -121,9 +121,9 @@ export default function DentistWebsite() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50">
+    <div className="min-h-screen bg-gray-50 font-sans antialiased">
       {/* Mobile Container */}
-      <div className="max-w-md mx-auto bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 min-h-screen relative">
+      <div className="max-w-md mx-auto bg-gray-50 min-h-screen relative">
         {/* Story Modal */}
         <Story
           stories={stories}

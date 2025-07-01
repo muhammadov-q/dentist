@@ -16,7 +16,7 @@ export default function Menu({ activeTab, setActiveTab }: MenuProps) {
   ]
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 max-w-md mx-auto ">
+    <nav className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-md bg-white border-t border-gray-200 px-4 py-2 z-50">
       <div className="flex justify-between items-center">
         {tabs.map((tab) => {
           const Icon = tab.icon
@@ -27,16 +27,8 @@ export default function Menu({ activeTab, setActiveTab }: MenuProps) {
               onClick={() => setActiveTab(tab.key)}
               className="flex flex-col items-center justify-center flex-1 py-2"
             >
-              <Icon
-                className={`w-5 h-5 transition-colors ${
-                  isActive ? "text-blue-600" : "text-gray-500"
-                }`}
-              />
-              <span
-                className={`text-[11px] mt-1 ${
-                  isActive ? "text-blue-600 font-medium" : "text-gray-500"
-                }`}
-              >
+              <Icon className={`w-5 h-5 transition-colors ${isActive ? "text-blue-600" : "text-gray-500"}`} />
+              <span className={`text-[11px] mt-1 ${isActive ? "text-blue-600 font-medium" : "text-gray-500"}`}>
                 {tab.label}
               </span>
             </button>
